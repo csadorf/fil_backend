@@ -28,7 +28,6 @@ import xgboost as xgb
 from hypothesis import HealthCheck, assume, given, settings
 from hypothesis import strategies as st
 from hypothesis.extra.numpy import arrays as st_arrays
-from rapids_triton import Client
 from rapids_triton.testing import arrays_close, get_random_seed
 
 TOTAL_SAMPLES = 20
@@ -64,14 +63,6 @@ def valid_shm_modes():
     if os.environ.get("CPU_ONLY", 0) == 0:
         modes.append("cuda")
     return tuple(modes)
-
-
-@pytest.fixture(scope="session")
-def client():
-    """A RAPIDS-Triton client for submitting inference requests"""
-    client = Client()
-    client.wait_for_server(120)
-    return client
 
 
 @pytest.fixture(scope="session")
