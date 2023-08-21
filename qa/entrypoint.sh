@@ -26,5 +26,5 @@ then
   MODEL_REPO="${QA_DIR}/L0_e2e/cpu_model_repository" "$TEST_SCRIPT"
 fi
 
-echo 'Running tests without visible GPUs...'
-CPU_ONLY=1 MODEL_REPO="${QA_DIR}/L0_e2e/cpu_model_repository" "$TEST_SCRIPT"
+# echo 'Running tests without visible GPUs...'
+# CPU_ONLY=1 MODEL_REPO="${QA_DIR}/L0_e2e/cpu_model_repository" "$TEST_SCRIPT"

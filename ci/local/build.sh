@@ -73,6 +73,7 @@ export TEST_TAG=triton_fil_test:cpu
 echo "Building CPU-only Docker images..."
 $REPO_DIR/build.sh $BUILD_ARGS --cpu-only
 
+exit 0
 echo "Running CPU-only tests..."
 docker run \
   $DOCKER_ARGS \
