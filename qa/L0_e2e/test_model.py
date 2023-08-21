@@ -335,7 +335,6 @@ def test_max_batch(client, model_data, shared_mem):
         name: size * model_data.max_batch_size
         for name, size in model_data.output_sizes.items()
     }
-    shared_mem = valid_shm_modes()[0]
     result = client.predict(
         model_data.name, max_inputs, model_output_sizes, shared_mem=shared_mem
     )
