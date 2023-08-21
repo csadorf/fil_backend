@@ -59,6 +59,7 @@ ModelData = namedtuple(
 @lru_cache()
 def valid_shm_modes():
     """Return a tuple of allowed shared memory modes"""
+    return ("cuda",)
     modes = [None]
     if os.environ.get("CPU_ONLY", 0) == 0:
         modes.append("cuda")
