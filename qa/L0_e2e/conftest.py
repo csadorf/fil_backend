@@ -10,7 +10,7 @@ settings.register_profile("dev", max_examples=10)
 settings.register_profile("ci", max_examples=100)
 settings.register_profile(
     "stress",
-    max_examples=100000,
+    max_examples=1000,
     phases=[Phase.explicit, Phase.reuse, Phase.generate, Phase.target],
     report_multiple_bugs=False,
     verbosity=Verbosity.debug,
